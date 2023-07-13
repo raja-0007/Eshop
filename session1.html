@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        .navi {
+            height: 100px;
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        .navlogo {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 3em;
+            font-weight: bolder;
+
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .navlinkdiv {
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        .navlinks {
+            font-size: 1.2em;
+            line-height: 100px;
+            color: whitesmoke;
+            transition: all 0.4s;
+        }
+
+        .navlinks:hover {
+            font-size: 1.1em;
+            color: black;
+        }
+
+        .order-table {
+            background-color: black;
+
+        }
+
+
+
+        .place-orderbtn {
+            color: white;
+            font-size: 1.1em;
+            border: 0px;
+            
+            background-color: rgb(66, 166, 209);
+            width: 150px;
+            padding: 10px;
+            margin-top: 30px;
+            border-radius: 30px;
+            transition: all 0.5s;
+            
+        }
+
+        .place-orderbtn:hover {
+
+            background-color: rgb(73, 133, 213);
+
+        }
+        input[type="button"]{
+            outline: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(238, 238, 238);">
+
+    <script>
+        localStorage.clear();
+        sessionStorage.setItem('counta1', 0)
+        sessionStorage.setItem('counta2', 0)
+        sessionStorage.setItem('counta3', 0)
+        sessionStorage.setItem('counta4', 0)
+        sessionStorage.setItem('counta5', 0)
+        sessionStorage.setItem('counta6', 0)
+        sessionStorage.setItem('counta7', 0)
+        sessionStorage.setItem('counta8', 0)
+        sessionStorage.setItem('counta9', 0)
+        sessionStorage.setItem('counta10', 0)
+        sessionStorage.setItem('counta11', 0)
+        sessionStorage.setItem('counta12', 0)
+
+
+
+
+
+        sessionStorage.setItem('countb1', 0)
+        sessionStorage.setItem('countb2', 0)
+        sessionStorage.setItem('countb3', 0)
+        sessionStorage.setItem('countb4', 0)
+        sessionStorage.setItem('countb5', 0)
+        sessionStorage.setItem('countb6', 0)
+        sessionStorage.setItem('countb7', 0)
+        sessionStorage.setItem('countb8', 0)
+        sessionStorage.setItem('countb9', 0)
+        sessionStorage.setItem('countb10', 0)
+        sessionStorage.setItem('countb11', 0)
+        sessionStorage.setItem('countb12', 0)
+
+
+
+
+
+        sessionStorage.setItem('countc1', 0)
+        sessionStorage.setItem('countc2', 0)
+        sessionStorage.setItem('countc3', 0)
+        sessionStorage.setItem('countc4', 0)
+        sessionStorage.setItem('countc5', 0)
+        sessionStorage.setItem('countc6', 0)
+        sessionStorage.setItem('countc7', 0)
+        sessionStorage.setItem('countc8', 0)
+        sessionStorage.setItem('countc9', 0)
+        sessionStorage.setItem('countc10', 0)
+        sessionStorage.setItem('countc11', 0)
+        sessionStorage.setItem('countc12', 0)
+
+
+
+
+
+        sessionStorage.setItem('countd1', 0)
+        sessionStorage.setItem('countd2', 0)
+        sessionStorage.setItem('countd3', 0)
+        sessionStorage.setItem('countd4', 0)
+        sessionStorage.setItem('countd5', 0)
+        sessionStorage.setItem('countd6', 0)
+        sessionStorage.setItem('countd7', 0)
+        sessionStorage.setItem('countd8', 0)
+        sessionStorage.setItem('countd9', 0)
+        sessionStorage.setItem('countd10', 0)
+        sessionStorage.setItem('countd11', 0)
+        sessionStorage.setItem('countd12', 0)
+
+
+
+
+
+        sessionStorage.setItem('counte1', 0)
+        sessionStorage.setItem('counte2', 0)
+        sessionStorage.setItem('counte3', 0)
+        sessionStorage.setItem('counte4', 0)
+        sessionStorage.setItem('counte5', 0)
+        sessionStorage.setItem('counte6', 0)
+        sessionStorage.setItem('counte7', 0)
+        sessionStorage.setItem('counte8', 0)
+        sessionStorage.setItem('counte9', 0)
+        sessionStorage.setItem('counte10', 0)
+        sessionStorage.setItem('counte11', 0)
+        sessionStorage.setItem('counte12', 0)
+
+
+
+
+
+        sessionStorage.setItem('countf1', 0)
+        sessionStorage.setItem('countf2', 0)
+        sessionStorage.setItem('countf3', 0)
+        sessionStorage.setItem('countf4', 0)
+        sessionStorage.setItem('countf5', 0)
+        sessionStorage.setItem('countf6', 0)
+        sessionStorage.setItem('countf7', 0)
+        sessionStorage.setItem('countf8', 0)
+        sessionStorage.setItem('countf9', 0)
+        sessionStorage.setItem('countf10', 0)
+        sessionStorage.setItem('countf11', 0)
+        sessionStorage.setItem('countf12', 0)
+
+
+
+
+
+        localStorage.setItem('product_noa', null);
+        localStorage.setItem('product_nob', null);
+        localStorage.setItem('product_noc', null);
+        localStorage.setItem('product_nod', null);
+        localStorage.setItem('product_noe', null);
+        localStorage.setItem('product_nof', null);
+
+        var ordereda = []
+        var orderedb = []
+        var orderedc = []
+        var orderedd = []
+        var orderede = []
+        var orderedf = []
+        var orderedastring = JSON.stringify(ordereda)
+        var orderedbstring = JSON.stringify(orderedb)
+        var orderedcstring = JSON.stringify(orderedc)
+        var ordereddstring = JSON.stringify(orderedd)
+        var orderedestring = JSON.stringify(orderede)
+        var orderedfstring = JSON.stringify(orderedf)
+        sessionStorage.setItem('ordereda', orderedastring)
+        sessionStorage.setItem('orderedb', orderedbstring)
+        sessionStorage.setItem('orderedc', orderedcstring)
+        sessionStorage.setItem('orderedd', ordereddstring)
+        sessionStorage.setItem('orderede', orderedestring)
+        sessionStorage.setItem('orderedf', orderedfstring)
+        sessionStorage.setItem('count', 0)
+    </script>
+
+    <div class="container-fluid sticky-top navi" id="navi">
+        <div class="row">
+            <div class="col-3 navlogo "><a href="" id="logo">
+                
+                <span style="color: black;"><img src="images/eshop logo3.png" width="40px" style="margin-bottom: 10px;" alt="">E</span>shop
+            </a></div>
+            <div class="col-3 text-center navlinkdiv"><a href="" class="navlinks" id="links"
+                    onclick="plzlogin()">Home</a></div>
+            <div class="col-3 text-center navlinkdiv"><a href="" class="navlinks" id="links"
+                    onclick="plzlogin()">Products</a></div>
+            <div class="col-3 text-center navlinkdiv"><a href="register1.html" class="navlinks" id="links">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+
+        <div class="row  pt-5 pb-5">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="innerdiv text-center pb-5 pt-5"
+                    style="width: 100%; background-color: whitesmoke;">
+                    <p style="font-size: 3em; font-weight: bolder; color: rgb(15, 64, 129);">Welcome to Eshop</p>
+                    <p style="font-size: 1.3em;">please login to continue</p>
+                    <div style=" padding-top: 50px; padding-bottom: 50px; margin-left: 100px; margin-right: 100px;">
+
+                        <a href="index1.html" id=""><input type="button" class="place-orderbtn" id="div1" value="Login"></a>
+                        <p style="margin-top: 20px; color: rgb(15, 64, 129);"><a href="register1.html"
+                                style="color: rgb(15, 64, 129); text-decoration: underline;">click here</a> to register,
+                            if you are a new user</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+
+
+
+        <div class="row mt-5 pt-5 pb-5" style="background-color: rgb(15, 64, 129);">
+            <div class="col-4 mx-auto text-center">
+                <img src="images/eshop logo3.png" width="100px" alt="">
+                <h1 style="color: whitesmoke;"><span style="color: black;">E</span>shop</h1>
+            </div>
+            <div class="col-8 mx-auto text-center">
+                <p style="color: whitesmoke; margin-top: 7%;">thanks for visiting our Eshop</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

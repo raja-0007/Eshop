@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        .navi {
+            height: 100px;
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        .navlogo {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 3em;
+            font-weight: bolder;
+
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .navlinkdiv {
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        .navlinks {
+            font-size: 1.2em;
+            line-height: 100px;
+            color: whitesmoke;
+            transition: all 0.4s;
+        }
+
+        .navlinks:hover {
+            font-size: 1.1em;
+            color: black;
+        }
+
+
+
+        .labels {
+            color: rgb(130, 184, 208);
+            padding: 10px;
+            padding-left: 80px;
+            text-align: left;
+            width: 200px;
+            height: 100px;
+            font-size: 1.1em;
+        }
+
+        .inputs {
+            width: 300px;
+            height: 100px;
+            text-align: left;
+
+        }
+
+        .place-orderbtn {
+            color: white;
+            font-size: 1.1em;
+            border: 0px;
+            background-color: rgb(66, 166, 209);
+            width: 150px;
+            padding: 10px;
+            margin-top: 30px;
+            border-radius: 30px;
+            transition: all 0.5s;
+        }
+
+        .place-orderbtn:hover {
+
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        input[type=checkbox] {
+            accent-color: rgb(73, 133, 213);
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="button"] {
+
+            outline: none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+        function bbtm(n) {
+
+            const collection = document.getElementsByClassName("its");
+
+            collection[n].style.borderBottom = "2px solid rgb(73, 133, 213)";
+
+        }
+        function bbtm2(n) {
+
+            const collection = document.getElementsByClassName("its");
+
+            collection[n].style.borderBottom = "2px solid gray";
+
+        }
+        var user1 = sessionStorage.getItem('user1')
+        var pwd1 = sessionStorage.getItem('pwd1')
+        console.log(user1, pwd1)
+        var user2 = sessionStorage.getItem('user2')
+        var pwd2 = sessionStorage.getItem('pwd2')
+        console.log(user2, pwd2)
+        var user3 = sessionStorage.getItem('user3')
+        var pwd3 = sessionStorage.getItem('pwd3')
+        console.log(user3, pwd3)
+        var user4 = sessionStorage.getItem('user4')
+        var pwd4 = sessionStorage.getItem('pwd4')
+        console.log(user4, pwd4)
+        var user5 = sessionStorage.getItem('user5')
+        var pwd5 = sessionStorage.getItem('pwd5')
+        console.log(user5, pwd5)
+
+
+        function checkp() {
+            var p = document.getElementById('pwd')
+            if (p.type == 'password') {
+                p.type = 'text'
+            }
+            else {
+                p.type = 'password'
+            }
+        }
+        function plzlogin() {
+            alert('please log in')
+        }
+        function login() {
+
+            var username = document.getElementById('username').value
+            var password = document.getElementById('pwd').value
+            if (username == 'raja' && password == 'raja07') {
+                document.getElementById('mover').href = 'home.html'
+                sessionStorage.setItem('active-user', 'a')
+
+
+            }
+            else if (username == user1 && password == pwd1) {
+                document.getElementById('mover').href = 'home.html'
+                sessionStorage.setItem('active-user', 'b')
+            }
+            else if (username == user2 && password == pwd2) {
+                document.getElementById('mover').href = 'home.html'
+                sessionStorage.setItem('active-user', 'c')
+            }
+            else if (username == user3 && password == pwd3) {
+                document.getElementById('mover').href = 'home.html'
+                sessionStorage.setItem('active-user', 'd')
+            }
+            else if (username == user4 && password == pwd4) {
+                document.getElementById('mover').href = 'home.html'
+                sessionStorage.setItem('active-user', 'e')
+            }
+            else if (username == user5 && password == pwd5) {
+                document.getElementById('mover').href = 'home.html'
+                sessionStorage.setItem('active-user', 'f')
+            }
+            else {
+                alert("enter the valid login details")
+            }
+
+            var act_user = sessionStorage.getItem('active-user')
+
+        }
+
+    </script>
+
+    <div class="container-fluid sticky-top navi" id="navi">
+        <div class="row">
+            <div class="col-3 navlogo "><a href="" id="logo">
+                
+                <span style="color: black;"><img src="images/eshop logo3.png" width="40px" style="margin-bottom: 10px;" alt="">E</span>shop
+            </a></div>
+            <div class="col-3 text-center navlinkdiv"><a href="" class="navlinks" id="links"
+                    onclick="plzlogin()">Home</a></div>
+            <div class="col-3 text-center navlinkdiv"><a href="" class="navlinks" id="links"
+                    onclick="plzlogin()">Products</a></div>
+            <div class="col-3 text-center navlinkdiv"><a href="register1.html" class="navlinks" id="links">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-image: url(images/eslider2.webp);">
+
+
+
+        <div class="row pt-5 pb-5">
+            <div class="col-3 mt-5"></div>
+            <div class="col-6 mt-5">
+                <div class="innerdiv text-center pb-5 pt-5 rounded" style="width: 100%;  background-color: white;">
+                    <p style="font-size: 3em; font-weight: bolder; color: rgb(15, 64, 129);">Welcome to Eshop</p>
+                    <p style="font-size: 1em;">please login to continue</p>
+                    <div style=" padding-top: 10px;  margin-left: 100px; margin-right: 100px;">
+                        <form action="">
+                            <table class="mx-auto">
+                                <tr>
+                                    <td class="labels">Username</td>
+                                    <td class="inputs"><input type="text" id="username" placeholder="Enter Username" onfocus="bbtm(0)" onblur="bbtm2(0)" class="its"
+                                            style="transition: all 0.3s; height: 35px; padding-left: 10px; color: black; border: 0px; border-bottom: 2px solid gray;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="labels">Password</td>
+                                    <td class="inputs"><input type="password" id="pwd" placeholder="Enter Password" onfocus="bbtm(1)" onblur="bbtm2(1)" class="its"
+                                            style="transition: all 0.3s; height: 35px; padding-left: 10px;  color: black;  border: 0px; border-bottom: 2px solid gray;">
+                                        <input type="checkbox" onclick="checkp()"><span
+                                            style="color: rgb(130, 184, 208);">show</span>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                        </form>
+                        <a href="" id="mover"><input type="button" class="place-orderbtn" id="div1" onclick="login()"
+                                value="Login"></a>
+                        <p style="margin-top: 20px; color: rgb(15, 64, 129);"><a href="register1.html"
+                                style="color: rgb(15, 64, 129); text-decoration: underline;">click here</a> to register,
+                            if you are a
+                            new user</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 mt-5"></div>
+        </div>
+
+
+
+
+        <div class="row mt-5 pt-5 pb-5" style="background-color: rgb(15, 64, 129);">
+            <div class="col-4 mx-auto text-center">
+                <img src="images/eshop logo3.png" width="100px" alt="">
+                <h1 style="color: whitesmoke;"><span style="color: black;">E</span>shop</h1>
+            </div>
+            <div class="col-8 mx-auto text-center">
+                <p style="color: whitesmoke; margin-top: 7%;">thanks for visiting our Eshop</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+</body>
+
+</html>

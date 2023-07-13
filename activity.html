@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        .navi {
+            height: 100px;
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        .navlogo {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 3em;
+            font-weight: bolder;
+
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .navlinkdiv {
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        .navlinks {
+            font-size: 1.2em;
+            line-height: 100px;
+            color: whitesmoke;
+            transition: all 0.4s;
+        }
+
+        .navlinks:hover {
+            font-size: 1.1em;
+            color: black;
+        }
+
+        /* p {
+            font-size: 1.1em;
+            color: white;
+            background-color: black;
+            height: 50px;
+            line-height: 50px;
+            width: 1000px;
+            
+        } */
+        /* span{
+            color: red;
+            margin-left: 160px;
+        } */
+        .fprice{
+            color: red;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .pros{
+            float: left;
+            width: 50%;
+            
+            text-align: left;
+        }
+        .prost{
+            width: 100%;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(238, 238, 238); background-image: url(images/backgrounder3.jpg); background-blend-mode: color-burn;">
+    <div class="container-fluid sticky-top navi" id="navi">
+        <div class="row">
+            <div class="col-4 navlogo "><a href="home.html" id="logo">
+                
+                <span style="color: black;"><img src="images/eshop logo3.png" width="40px" style="margin-bottom: 10px;" alt="">E</span>shop
+            </a></div>
+        <div class="col-2 text-center navlinkdiv"><a href="home.html" class="navlinks" >Home</a></div>
+        <div class="col-2 text-center navlinkdiv"><a href="products view1.html" class="navlinks" >Products</a></div>
+        <div class="col-2 text-center navlinkdiv"><a href="activity.html" class="navlinks" >Orders</a></div>
+        <div class="col-2 text-center navlinkdiv"><a href="index1.html" class="navlinks" >Log Out</a></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        
+        <div class="row mt-5 pt-5 mb-5 pb-5" >
+            <div class="col-3"></div>
+            <div class="col-6 text-center rounded" id="pro" style=" padding: 50px; background-color: rgb(245, 245, 245);  font-size: 1.1em;">
+                <h2 style="color: rgb(15, 64, 129); margin-bottom: 50px;">yours orders</h2>
+                <p id="nord">no orders yet..</p>
+                <div class="prost">
+                <div id="pro1" class="pros"></div>
+                <div id="pro2" class="pros"></div>
+            </div>
+            </div>
+            
+
+            <div class="col-3"></div>
+        </div>
+
+        
+        <footer class="row mt-5 pt-5 pb-5" style="background-color: rgb(15, 64, 129);">
+            <div class="col-4 mx-auto text-center">
+                <img src="images/eshop logo3.png" width="100px" alt="">
+                <h1 style="color: whitesmoke;"><span style="color: black;">E</span>shop</h1>
+            </div>
+            <div class="col-8 mx-auto text-center">
+                <p style="color: whitesmoke; margin-top: 7%;">thanks for visiting our Eshop</p>
+            </div>
+        </footer>
+        
+    </div>
+
+
+    <script>
+        var act_user = sessionStorage.getItem('active-user')
+        var orderedstring = sessionStorage.getItem('ordered'+act_user)
+        var ordered = JSON.parse(orderedstring)
+        console.log(typeof ordered)
+        console.log(ordered)
+        var i = 0
+        while(i<ordered.length){
+            console.log(ordered[i])
+            var li = document.createElement('p')
+            var li2 = document.createElement('p')
+            li.innerHTML = "<span style='color: rgb(130, 184, 208);'>Product:  </span> "+ordered[i]
+            li2.innerHTML = "<span style='color: rgb(130, 184, 208);'>Price:  </span> "+ordered[i+1]
+            document.getElementById('nord').style.display='none'
+            document.getElementById('pro1').appendChild(li)
+            document.getElementById('pro2').appendChild(li2)
+            console.log(i)
+            
+            i = i+2
+        }
+        
+    </script>
+
+</body>
+
+</html>

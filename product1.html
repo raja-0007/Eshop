@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        .navi {
+            height: 100px;
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        .navlogo {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 3em;
+            font-weight: bolder;
+
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .navlinkdiv {
+            background-color: rgb(73, 133, 213);
+
+        }
+
+        .navlinks {
+            font-size: 1.2em;
+            line-height: 100px;
+            color: whitesmoke;
+            transition: all 0.4s;
+        }
+
+        .navlinks:hover {
+            font-size: 1.1em;
+            color: black;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+        button {
+            font-size: 1.1em;
+
+        }
+
+        #btn,
+        #cancel {
+
+            background-color: rgb(66, 166, 209);
+            color: white;
+            width: 100px;
+            border-radius: 30px;
+            transition: all 0.5s;
+            border: 0px;
+            outline: none;
+
+        }
+
+        #btn:hover,
+        #cancel:hover {
+
+            background-color: rgb(73, 133, 213);
+
+
+        }
+
+        .rem-btns {
+            background-color: rgb(66, 166, 209);
+            color: white;
+            border-radius: 30px;
+            width: 100px;
+            transition: all 0.5s;
+            border: 0px;
+            outline: none;
+        }
+
+        .rem-btns:hover {
+            background-color: rgb(73, 133, 213);
+        }
+
+        .innerdiv {
+            width: 60%;
+            margin-left: 20%;
+            background-color: whitesmoke;
+        }
+        .labels{
+            color:rgb(130, 184, 208) ;
+        }
+        .botout{
+            background-color: rgb(231, 231, 231); color: rgb(1, 52, 35); 
+            display: none;
+        }
+        
+    </style>
+</head>
+
+<body style="background-color: rgb(238, 238, 238);">
+
+
+    <div class="container-fluid sticky-top navi" id="navi">
+        <div class="row">
+            <div class="col-4 navlogo "><a href="home.html" id="logo">
+                
+                    <span style="color: black;"><img src="images/eshop logo3.png" width="40px" style="margin-bottom: 10px;" alt="">E</span>shop
+                </a></div>
+            <div class="col-2 text-center navlinkdiv"><a href="home.html" class="navlinks">Home</a></div>
+            <div class="col-2 text-center navlinkdiv"><a href="products view1.html" class="navlinks">Products</a>
+            </div>
+            <div class="col-2 text-center navlinkdiv"><a href="activity.html" class="navlinks">Orders</a></div>
+            <div class="col-2 text-center navlinkdiv"><a href="index1.html" class="navlinks">Log Out</a></div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row pt-5 pb-5">
+            <div class="col-12 rounded" id="div1" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded">
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img src="images/woodland2.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Woodland Shoe" id="pname1"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="10000"
+                            id="price1"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy1" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate1" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot1"
+                        >
+                        <div class="innerbot1" id="innerbot1" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+
+                            <input type="number" name="" id="bprice1" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot1" id="inbot1" style="display: none;">
+                            <h4 id="response1"></h4>
+                            <a id="done1" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div2" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/casual blue jacket.webp" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Casual Blue Jacket" id="pname2"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="6000"
+                            id="price2"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy2" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate2" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot2"
+                        >
+                        <div class="innerbot2" id="innerbot2" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice2" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot2" id="inbot2" style="display: none;">
+                            <h4 id="response2"></h4>
+                            <a id="done2" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 rounded" id="div3" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/tshirt.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="White Tshirt" id="pname3"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="5000"
+                            id="price3"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy3" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate3" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot3"
+                        >
+                        <div class="innerbot3" id="innerbot3" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice3" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot3" id="inbot3" style="display: none;">
+                            <h4 id="response3"></h4>
+                            <a id="done3" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div4" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/rolex black watch2.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Rolex Black Watch" id="pname4"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="500000"
+                            id="price4"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy4" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate4" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot4"
+                        >
+                        <div class="innerbot4" id="innerbot4" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice4" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot4" id="inbot4" style="display: none;">
+                            <h4 id="response4"></h4>
+                            <a id="done4" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div5" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/suit1.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Raymond suit" id="pname5"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="20000"
+                            id="price5"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy5" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate5" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot5"
+                        >
+                        <div class="innerbot5" id="innerbot5" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice5" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot5" id="inbot5" style="display: none;">
+                            <h4 id="response5"></h4>
+                            <a id="done5" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div6" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/jeans1.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Levi's Jeans" id="pname6"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="5000"
+                            id="price6"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy6" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate6" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot6"
+                        >
+                        <div class="innerbot6" id="innerbot6" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice6" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot6" id="inbot6" style="display: none;">
+                            <h4 id="response6"></h4>
+                            <a id="done6" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div7" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/formal shoe1.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Bata Formal Shoes" id="pname7"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="4000"
+                            id="price7"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy7" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate7" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot7"
+                        >
+                        <div class="innerbot7" id="innerbot7" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice7" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot7" id="inbot7" style="display: none;">
+                            <h4 id="response7"></h4>
+                            <a id="done7" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div8" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/Light Blue Summer Bag.webp" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Light Blue Summer Bag" id="pname8"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="3000"
+                            id="price8"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy8" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate8" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot8"
+                        >
+                        <div class="innerbot8" id="innerbot8" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice8" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot8" id="inbot8" style="display: none;">
+                            <h4 id="response8"></h4>
+                            <a id="done8" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div9" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/capjpeg.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Blue Cap" id="pname9"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="1000"
+                            id="price9"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy9" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate9" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot9"
+                        >
+                        <div class="innerbot9" id="innerbot9" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice9" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot9" id="inbot9" style="display: none;">
+                            <h4 id="response9"></h4>
+                            <a id="done9" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div10" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/suit2.jpg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Allen Solly suit" id="pname10"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="22000"
+                            id="price10"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy10" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate10" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot10"
+                        >
+                        <div class="innerbot10" id="innerbot10" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice10" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot10" id="inbot10" style="display: none;">
+                            <h4 id="response10"></h4>
+                            <a id="done10" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div11" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/tudor black bay watch1.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Tudor Watch" id="pname11"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="200000"
+                            id="price11"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy11" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate11" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot11"
+                        >
+                        <div class="innerbot11" id="innerbot11" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice11" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot11" id="inbot11" style="display: none;">
+                            <h4 id="response11"></h4>
+                            <a id="done11" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 rounded" id="div12" style="display: none;">
+                <div class="innerdiv text-center pb-5 rounded"
+                    >
+                    <h1 class="mb-5 pt-3" style="color: rgb(15, 64, 129);">Product</h1>
+                    <img class="img-fluid" src="images/jeans3.jpeg" alt="">
+                    <p class="text-light mt-3"><span class="labels">name: </span><input type="text"
+                            value="Pepe Jeans" id="pname12"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <p class="text-light"><span class="labels">price: </span><input type="number" value="10000"
+                            id="price12"
+                            style=" color: rgb(1, 52, 35); border: 0px;"
+                            disabled></input></p>
+                    <a href="order1.html"><button class="rem-btns" id="buy12" onclick="order()">buy</button></a>
+                    <button class="rem-btns" id="negotiate12" onclick="demo()">lucky try</button>
+                    <div class="mt-3 pt-3 pb-3 botout" id="bot12"
+                        >
+                        <div class="innerbot12" id="innerbot12" style="display: none;">
+                            <p style="font-size: 1.2em; color: red;">you have only one lucky try for this product
+                            </p>
+                            <p style="font-size: 0.8em; color: gray;"><i class="fa-solid fa-circle-info"
+                                    style="color: rgb(190, 83, 83);"></i> you should enter a price which also
+                                satisfies the seller</p>
+                            <p>enter the price you wish:</p>
+                            <input type="number" name="" id="bprice12" class="rounded"><br>
+                            <input class="mt-2" type="submit" onclick="demo2()" name="" id="btn">
+                            <input class="mt-2" type="submit" value="cancel" onclick="cancel()" name="" id="cancel">
+                        </div>
+
+                        <div class="inbot12" id="inbot12" style="display: none;">
+                            <h4 id="response12"></h4>
+                            <a id="done12" style="display: none;" href="order1.html"><button onclick="lorder()"
+                                    class="rem-btns">Lucky
+                                    Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row mt-5 pt-5 pb-5" style="background-color: rgb(15, 64, 129);">
+            <div class="col-4 mx-auto text-center">
+                <img src="images/eshop logo3.png" width="100px" alt="">
+                <h1 style="color: whitesmoke;"><span style="color: black;">E</span>shop</h1>
+            </div>
+            <div class="col-8 mx-auto text-center">
+                <p style="color: whitesmoke; margin-top: 7%;">thanks for visiting our Eshop</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const arr = [0, 0, 0, 0]
+        var act_user = sessionStorage.getItem('active-user')
+        var pro = localStorage.getItem('product_no' + act_user)
+        console.log(pro)
+        var opro = 'div' + pro
+        var ltry = sessionStorage.getItem('count' + act_user + pro)
+
+        console.log(opro)
+        console.log(ltry)
+        document.getElementById(opro).style.display = 'block'
+        function demo() {
+            if (ltry == 0) {
+                document.getElementById("bot" + pro).style.display = "block"
+                document.getElementById("innerbot" + pro).style.display = "block"
+
+                document.getElementById("buy" + pro).style.display = "none"
+            }
+            else {
+                alert('you have alredy used your lucky try for this product')
+            }
+
+
+
+        }
+        function demo2() {
+
+            var bprice = document.getElementById('bprice' + pro).value
+            var bprice = parseInt(bprice)
+            var sprice = document.getElementById("price" + pro).value
+            var sprice = parseInt(sprice)
+            var profit = sprice * (20 / 100)
+            var mprice = sprice - profit
+            var nprice = mprice + profit / 2
+            console.log(bprice, sprice, mprice, nprice)
+
+
+            if (bprice > mprice && bprice <= sprice) {
+                if (bprice >= nprice) {
+                    document.getElementById("innerbot" + pro).style.display = "none"
+                    document.getElementById("response" + pro).innerHTML = "you can buy it! click lucky buy to buy it!"
+                    document.getElementById("inbot" + pro).style.display = "block"
+                    document.getElementById("done" + pro).style.display = 'block'
+                    document.getElementById("buy" + pro).style.display = "inline"
+
+                }
+                else if (bprice < nprice) {
+                    console.log('yess')
+                    document.getElementById("innerbot" + pro).style.display = "none"
+                    document.getElementById("inbot" + pro).style.display = "block"
+                    document.getElementById("done" + pro).style.display = "none"
+                    document.getElementById("response" + pro).innerHTML = "You just missed it"
+                    document.getElementById("buy" + pro).style.display = "inline"
+                }
+                else {
+                    document.getElementById("done" + pro).style.display = "none"
+                    document.getElementById("response" + pro).innerHTML = "sorry"
+                    document.getElementById("buy" + pro).style.display = "inline"
+                }
+
+            }
+            else if (bprice > mprice && bprice > sprice) {
+                console.log("bprice " + bprice + " sprice" + sprice)
+                document.getElementById("innerbot" + pro).style.display = "none"
+                document.getElementById("inbot" + pro).style.display = "block"
+                document.getElementById("done" + pro).style.display = "none"
+                document.getElementById("buy" + pro).style.display = "inline"
+                document.getElementById("response" + pro).innerHTML = "price you entered is greater than the sales price"
+            }
+            else if (bprice < mprice) {
+                document.getElementById("innerbot" + pro).style.display = "none"
+                document.getElementById("inbot" + pro).style.display = "block"
+                document.getElementById("done" + pro).style.display = "none"
+                document.getElementById("buy" + pro).style.display = "inline"
+                document.getElementById("response" + pro).innerHTML = "price you entered less than the manufactured price of the product. it cannot be sold at that price "
+            }
+
+            else if (bprice == mprice) {
+                document.getElementById("innerbot" + pro).style.display = "none"
+
+
+                document.getElementById("response" + pro).innerHTML = "price you entered is the manufactured price of the product. it cannot be sold at that price "
+                document.getElementById("inbot" + pro).style.display = "block"
+                document.getElementById("done" + pro).style.display = "none"
+                document.getElementById("buy" + pro).style.display = "inline"
+            }
+
+            else {
+                document.getElementById("innerbot" + pro).style.display = "none"
+
+                document.getElementById("done" + pro).style.display = "none"
+                document.getElementById("response" + pro).innerHTML = "thank you"
+                document.getElementById("inbot" + pro).style.display = "block"
+                document.getElementById("buy" + pro).style.display = "inline"
+            }
+            localStorage.setItem('p', bprice)
+            ltry = ltry + 1
+            sessionStorage.setItem('count' + act_user + pro, ltry)
+            console.log(ltry)
+            document.getElementById('negotiate' + pro).style.display = 'none'
+
+
+
+
+
+        }
+        function cancel() {
+            document.getElementById("buy" + pro).style.display = "inline"
+            document.getElementById("bot" + pro).style.display = "none"
+        }
+        function lorder() {
+            var pname = document.getElementById("pname" + pro).value
+            var sprice = document.getElementById('price' + pro).value
+            var sprice = parseInt(sprice)
+            var price = localStorage.getItem('p')
+            var price = parseInt(price)
+            localStorage.setItem('sprice', sprice)
+            localStorage.setItem('price', price)
+            localStorage.setItem('name', pname)
+        }
+        function order() {
+
+            var pname = document.getElementById("pname" + pro).value
+            var price = document.getElementById('price' + pro).value
+            var price = parseInt(price)
+            var sprice = document.getElementById('price' + pro).value
+            var sprice = parseInt(sprice)
+            localStorage.setItem('sprice', sprice)
+            localStorage.setItem('price', price)
+            localStorage.setItem('name', pname)
+        }
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
