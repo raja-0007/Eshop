@@ -125,7 +125,7 @@
             <div class="col-2 text-center navlinkdiv"><a href="products view1.html" class="navlinks">Products</a>
             </div>
             <div class="col-2 text-center navlinkdiv"><a href="activity.html" class="navlinks">Orders</a></div>
-            <div class="col-2 text-center navlinkdiv"><a href="index1.html" class="navlinks">Log Out</a></div>
+            <div class="col-2 text-center navlinkdiv"><a href="login.html" class="navlinks">Log Out</a></div>
         </div>
     </div>
 
@@ -642,6 +642,24 @@
 
         console.log(opro)
         console.log(ltry)
+        var condition = document.getElementById('price'+pro).value
+        var percent 
+        if(condition<5000){
+            //alert('Lucky')
+            document.getElementById("negotiate"+pro).style.display = 'none'
+        }
+        else if(condition<10000){
+            percent = 20
+        }
+        else if(condition<30000){
+            percent = 10
+        }
+        else if(condition<300000){
+            percent = 4
+        }
+        else{
+            percent = 2
+        }
         document.getElementById(opro).style.display = 'block'
         function demo() {
             if (ltry == 0) {
@@ -663,7 +681,7 @@
             var bprice = parseInt(bprice)
             var sprice = document.getElementById("price" + pro).value
             var sprice = parseInt(sprice)
-            var profit = sprice * (20 / 100)
+            var profit = sprice * (percent / 100)
             var mprice = sprice - profit
             var nprice = mprice + profit / 2
             console.log(bprice, sprice, mprice, nprice)
